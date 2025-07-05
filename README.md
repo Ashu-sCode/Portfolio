@@ -5,12 +5,6 @@ Welcome to my personal portfolio website built with **React 19**, **Tailwind CSS
 
 ---
 
-## 📸 Preview
-
-![Portfolio Preview](https://your-preview-image-link-if-any.com)
-
----
-
 ## 🛠️ Tech Stack
 
 | Frontend           | Admin CMS              | Backend / Services     |
