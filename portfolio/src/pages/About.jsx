@@ -50,7 +50,7 @@ const About = () => {
           transition={{ type: "spring", stiffness: 100 }}
         >
           <img
-            src="/images/dev-working.svg"
+            src="/dev-working.svg"
             alt="Working Developer"
             className="w-full h-auto drop-shadow-xl"
           />

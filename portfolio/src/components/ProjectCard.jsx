@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Github } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
-const ProjectCard = ({ title, description, tech, github, demo, image, onClick }) => {
+const ProjectCard = ({
+  title,
+  description,
+  tech,
+  github,
+  demo,
+  image,
+  onClick,
+}) => {
+  const [imgLoaded, setImgLoaded] = useState(false);
+
   return (
     <div
       onClick={onClick}
       className="cursor-pointer bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition border border-purple-100"
     >
-      {/* Preview Image */}
+      {/* Lazy Loaded Image with Fade-in */}
       {image && (
-        <img src={image} alt={title} className="w-full h-48 object-cover" />
+        <picture>
+        <img
+          src={image}
+          alt={title}
+          loading="lazy"
+          onLoad={() => setImgLoaded(true)}
+          className={`w-full h-48 object-cover transition-opacity duration-700 ${
+            imgLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        />
+        </picture>
       )}
 
       <div className="p-6">
@@ -42,7 +62,7 @@ const ProjectCard = ({ title, description, tech, github, demo, image, onClick })
               target="_blank"
               rel="noopener noreferrer"
               className="text-indigo-600 hover:underline flex items-center gap-1"
-              onClick={(e) => e.stopPropagation()} // Stop modal open
+              onClick={(e) => e.stopPropagation()}
             >
               <Github size={16} /> GitHub
             </a>
@@ -53,7 +73,7 @@ const ProjectCard = ({ title, description, tech, github, demo, image, onClick })
               target="_blank"
               rel="noopener noreferrer"
               className="text-purple-600 hover:underline"
-              onClick={(e) => e.stopPropagation()} // Stop modal open
+              onClick={(e) => e.stopPropagation()}
             >
               Live Demo
             </a>

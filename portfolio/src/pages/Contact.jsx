@@ -76,7 +76,7 @@ const Contact = () => {
         Contact Me
       </motion.h2>
 
-      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Left: Contact Info */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -85,7 +85,8 @@ const Contact = () => {
           className="space-y-6"
         >
           <p className="text-lg text-gray-800">
-            Got a project idea, collaboration, or just want to say hi? Drop me a message! 👇
+            Got a project idea, collaboration, or just want to say hi? Drop me a
+            message! 👇
           </p>
 
           <div className="space-y-3">
@@ -94,11 +95,18 @@ const Contact = () => {
             </div>
             <div className="flex items-center gap-3 text-purple-600">
               <Linkedin />
-              <a href="https://www.linkedin.com/in/ashutosh452/" target="_blank">LinkedIn</a>
+              <a
+                href="https://www.linkedin.com/in/ashutosh452/"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
             </div>
             <div className="flex items-center gap-3 text-gray-700">
               <Github />
-              <a href="https://github.com/Ashu-sCode" target="_blank">GitHub</a>
+              <a href="https://github.com/Ashu-sCode" target="_blank">
+                GitHub
+              </a>
             </div>
           </div>
         </motion.div>
@@ -119,10 +127,14 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               className={`w-full border px-4 py-2 rounded-md focus:outline-none focus:ring-2 ${
-                errors.name ? "border-red-500 focus:ring-red-500" : "focus:ring-purple-500"
+                errors.name
+                  ? "border-red-500 focus:ring-red-500"
+                  : "focus:ring-purple-500"
               }`}
             />
-            {errors.name && <p className="text-sm text-red-600 mt-1">{errors.name}</p>}
+            {errors.name && (
+              <p className="text-sm text-red-600 mt-1">{errors.name}</p>
+            )}
           </div>
 
           <div>
@@ -133,10 +145,14 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               className={`w-full border px-4 py-2 rounded-md focus:outline-none focus:ring-2 ${
-                errors.email ? "border-red-500 focus:ring-red-500" : "focus:ring-purple-500"
+                errors.email
+                  ? "border-red-500 focus:ring-red-500"
+                  : "focus:ring-purple-500"
               }`}
             />
-            {errors.email && <p className="text-sm text-red-600 mt-1">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-sm text-red-600 mt-1">{errors.email}</p>
+            )}
           </div>
 
           <div>
@@ -147,10 +163,14 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               className={`w-full border px-4 py-2 rounded-md focus:outline-none focus:ring-2 ${
-                errors.message ? "border-red-500 focus:ring-red-500" : "focus:ring-purple-500"
+                errors.message
+                  ? "border-red-500 focus:ring-red-500"
+                  : "focus:ring-purple-500"
               }`}
             />
-            {errors.message && <p className="text-sm text-red-600 mt-1">{errors.message}</p>}
+            {errors.message && (
+              <p className="text-sm text-red-600 mt-1">{errors.message}</p>
+            )}
           </div>
 
           <button
